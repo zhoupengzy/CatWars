@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{94CA2248-A53F-2187-BE01-EBF56961C387}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -124,6 +125,29 @@
     <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Misc\HelperInfo.cs" />
     <Compile Include="Assets\UnityGameFramework\Scripts\Editor\ResourceAnalyzer\ResourceAnalyzerController.cs" />
     <Compile Include="Assets\UnityGameFramework\Scripts\Editor\ResourceEditor\AssetSorterType.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\CustomCecilRocks\MethodBodyRocks.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\Custom\CustomSettings.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\Extend\ToLua_LuaInterface_EventObject.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\Extend\ToLua_LuaInterface_LuaConstructor.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\Extend\ToLua_LuaInterface_LuaField.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\Extend\ToLua_LuaInterface_LuaMethod.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\Extend\ToLua_LuaInterface_LuaProperty.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\Extend\ToLua_System_Delegate.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\Extend\ToLua_System_Enum.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\Extend\ToLua_System_Object.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\Extend\ToLua_System_String.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\Extend\ToLua_System_Type.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\Extend\ToLua_UnityEngine_GameObject.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\Extend\ToLua_UnityEngine_Input.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\Extend\ToLua_UnityEngine_Object.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\Extend\ToLua_UnityEngine_RectTransform.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\ToLuaExport.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\ToLuaInjection.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\ToluaInjectionBlackListPanel.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\ToLuaInjectionHelper.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\ToLuaMenu.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\ToLuaText.cs" />
+    <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\ToLuaTree.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\UnityGameFramework\Scripts\Editor\UnityGameFramework.Editor.asmdef" />
@@ -748,6 +772,9 @@
       <Project>{2EBEBA84-4475-D9D3-00EC-A850D051DBCB}</Project>
       <Name>GameFramework</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\UnityGameFramework\Scripts\Editor\Tolua\Editor\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
