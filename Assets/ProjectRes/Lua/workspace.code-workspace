@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\..\\luaIde"
+		},
+		{
+			"path": "..\\..\\GameFramework\\Scripts\\GameCore\\GameFramework\\Lua\\ToLua"
+		}
+	],
+	"settings": {
+		"editor.snippetSuggestions": "bottom"
+	}
+}

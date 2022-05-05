@@ -1,4 +1,6 @@
-print("main.lua")
+
+require("GameFramework.Const")
+require("GameFramework.Init")
 
 local function main()
     print("main()")
