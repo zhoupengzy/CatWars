@@ -53,5 +53,8 @@
         "temp/":true,
         "Temp/":true
     },
-    "editor.snippetSuggestions": "bottom"
+    "editor.snippetSuggestions": "bottom",
+    "editor.tokenColorCustomizations": {
+        // "keywords": "#9d1fbd",
+    }
 }

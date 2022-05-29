@@ -10,7 +10,7 @@ Resolution = UnityEngine.Resolution
 Camera = UnityEngine.Camera
 EventTrigger = UnityEngine.EventSystems.EventTrigger
 EventTriggerType = UnityEngine.EventSystems.EventTriggerType
-Ease = DG.Tweening.Ease
+-- Ease = DG.Tweening.Ease
 Color = UnityEngine.Color
 ColorUtility = UnityEngine.ColorUtility
 LineRenderer = UnityEngine.LineRenderer
@@ -49,8 +49,8 @@ LuaComponent = GameEntry.GetComponent("LuaComponent")
 LoadSceneSuccessEventId = UnityGameFramework.Runtime.LoadSceneSuccessEventArgs.EventId
 UnLoadSceneSuccessEventId = UnityGameFramework.Runtime.UnloadSceneSuccessEventArgs.EventId
 -- Download
-DownloadSuccessEventId = UnityGameFramework.Runtime.DownloadSuccessEventArgs.EventId
-DownloadFailureEventId = UnityGameFramework.Runtime.DownloadFailureEventArgs.EventId
+-- DownloadSuccessEventId = UnityGameFramework.Runtime.DownloadSuccessEventArgs.EventId
+-- DownloadFailureEventId = UnityGameFramework.Runtime.DownloadFailureEventArgs.EventId
 -- WebRequest
 WebSuccessEventId = UnityGameFramework.Runtime.WebRequestSuccessEventArgs.EventId
 WebFailureEventId = UnityGameFramework.Runtime.WebRequestFailureEventArgs.EventId
@@ -64,15 +64,15 @@ ResourceUpdateSuccessEventId = UnityGameFramework.Runtime.ResourceUpdateSuccessE
 ResourceUpdateFailureEventId = UnityGameFramework.Runtime.ResourceUpdateFailureEventArgs.EventId
 ResourceUpdateAllCompleteEventId = UnityGameFramework.Runtime.ResourceUpdateAllCompleteEventArgs.EventId
 -- Entity
-HideEntityCompleteEventId = UnityGameFramework.Runtime.HideEntityCompleteEventArgs.EventId
+-- HideEntityCompleteEventId = UnityGameFramework.Runtime.HideEntityCompleteEventArgs.EventId
 -- Localstorage
-LocalstorageConnectSuccessEventId = GameFramework.Localstorage.LocalstorageConnectSuccessEventArgs.EventId
-LocalstorageConnectFaildEventId = GameFramework.Localstorage.LocalstorageConnectFaildEventArgs.EventId
+-- LocalstorageConnectSuccessEventId = GameFramework.Localstorage.LocalstorageConnectSuccessEventArgs.EventId
+-- LocalstorageConnectFaildEventId = GameFramework.Localstorage.LocalstorageConnectFaildEventArgs.EventId
 -- FileSystem
-FileLoaderCompleteEventId = GameFramework.FileSystem.FileLoaderCompleteEventArgs.EventId
-FileLoaderErrorEventId = GameFramework.FileSystem.FileLoaderErrorEventArgs.EventId
-OnApplicationPauseEventId = UnityGameFramework.Runtime.OnApplicationPauseEventArgs.EventId
+-- FileLoaderCompleteEventId = GameFramework.FileSystem.FileLoaderCompleteEventArgs.EventId
+-- FileLoaderErrorEventId = GameFramework.FileSystem.FileLoaderErrorEventArgs.EventId
+-- OnApplicationPauseEventId = UnityGameFramework.Runtime.OnApplicationPauseEventArgs.EventId
 -- Webview
-WebViewMessageEventId = UnityGameFramework.Runtime.WebView.WebViewMessageEventArgs.EventId
+-- WebViewMessageEventId = UnityGameFramework.Runtime.WebView.WebViewMessageEventArgs.EventId
 LoadDictionarySuccessEventId = UnityGameFramework.Runtime.LoadDictionarySuccessEventArgs.EventId
 LoadDictionaryFailureEventId = UnityGameFramework.Runtime.LoadDictionaryFailureEventArgs.EventId

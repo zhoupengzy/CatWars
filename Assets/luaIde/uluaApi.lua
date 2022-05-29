@@ -280,7 +280,6 @@ function UnityEngine.Vector3:Min(lhs,rhs) end
 --]]
 function UnityEngine.Vector3:Max(lhs,rhs) end
 function UnityEngine.Vector3:ToString() end
-function UnityEngine.Vector3:GetType() end
 
 UnityEngine.Vector2 = {}
 --[[
@@ -491,7 +490,6 @@ function UnityEngine.Vector2:Max(lhs,rhs) end
 	@return [luaIde#UnityEngine.Vector2]
 --]]
 function UnityEngine.Vector2:SmoothDamp(current,target,currentVelocity,smoothTime,maxSpeed) end
-function UnityEngine.Vector2:GetType() end
 
 UnityEngine.Vector4 = {}
 --[[
@@ -681,7 +679,6 @@ function UnityEngine.Vector4:ToString() end
 	return System.Single
 --]]
 function UnityEngine.Vector4:SqrMagnitude(a) end
-function UnityEngine.Vector4:GetType() end
 
 UnityEngine.Color = {}
 --[[
@@ -849,7 +846,6 @@ function UnityEngine.Color:RGBToHSV(rgbColor,H,S,V) end
 	@return [luaIde#UnityEngine.Color]
 --]]
 function UnityEngine.Color:HSVToRGB(H,S,V) end
-function UnityEngine.Color:GetType() end
 
 UnityEngine.Quaternion = {}
 --[[
@@ -1030,7 +1026,6 @@ function UnityEngine.Quaternion:GetHashCode() end
 --]]
 function UnityEngine.Quaternion:Equals(other) end
 function UnityEngine.Quaternion:ToString() end
-function UnityEngine.Quaternion:GetType() end
 
 UnityEngine.Ray = {}
 --[[
@@ -1055,13 +1050,6 @@ function UnityEngine.Ray:New(origin,direction) end
 --]]
 function UnityEngine.Ray:GetPoint(distance) end
 function UnityEngine.Ray:ToString() end
---[[
-	@obj System.Object
-	return System.Boolean
---]]
-function UnityEngine.Ray:Equals(obj) end
-function UnityEngine.Ray:GetHashCode() end
-function UnityEngine.Ray:GetType() end
 
 UnityEngine.Bounds = {}
 --[[
@@ -1140,7 +1128,6 @@ function UnityEngine.Bounds:SqrDistance(point) end
 	@return [luaIde#UnityEngine.Vector3]
 --]]
 function UnityEngine.Bounds:ClosestPoint(point) end
-function UnityEngine.Bounds:GetType() end
 
 UnityEngine.Touch = {}
 --[[
@@ -1214,14 +1201,6 @@ UnityEngine.Touch.radius = nil
 --]]
 UnityEngine.Touch.radiusVariance = nil
 function UnityEngine.Touch:New () end
---[[
-	@obj System.Object
-	return System.Boolean
---]]
-function UnityEngine.Touch:Equals(obj) end
-function UnityEngine.Touch:GetHashCode() end
-function UnityEngine.Touch:ToString() end
-function UnityEngine.Touch:GetType() end
 
 UnityEngine.RaycastHit = {}
 --[[
@@ -1285,14 +1264,6 @@ UnityEngine.RaycastHit.articulationBody = nil
 --]]
 UnityEngine.RaycastHit.lightmapCoord = nil
 function UnityEngine.RaycastHit:New () end
---[[
-	@obj System.Object
-	return System.Boolean
---]]
-function UnityEngine.RaycastHit:Equals(obj) end
-function UnityEngine.RaycastHit:GetHashCode() end
-function UnityEngine.RaycastHit:ToString() end
-function UnityEngine.RaycastHit:GetType() end
 
 UnityEngine.LayerMask = {}
 --[[
@@ -1316,14 +1287,294 @@ function UnityEngine.LayerMask:NameToLayer(layerName) end
 	return System.Int32
 --]]
 function UnityEngine.LayerMask:GetMask(layerNames) end
+
+Util = {}
 --[[
-	@obj System.Object
-	return System.Boolean
+	System.String
+	 Get 
 --]]
-function UnityEngine.LayerMask:Equals(obj) end
-function UnityEngine.LayerMask:GetHashCode() end
-function UnityEngine.LayerMask:ToString() end
-function UnityEngine.LayerMask:GetType() end
+Util.DataPath = nil
+--[[
+	System.Boolean
+	 Get 
+--]]
+Util.NetAvailable = nil
+--[[
+	System.Boolean
+	 Get 
+--]]
+Util.IsWifi = nil
+--[[
+	@o System.Object
+	return System.Int32
+--]]
+function Util:Int(o) end
+--[[
+	@o System.Object
+	return System.Single
+--]]
+function Util:Float(o) end
+--[[
+	@o System.Object
+	return System.Int64
+--]]
+function Util:Long(o) end
+--[[
+	@min System.Int32
+	@max System.Int32
+	return System.Int32
+--]]
+function Util:Random(min,max) end
+--[[
+	@uid System.String
+	return System.String
+--]]
+function Util:Uid(uid) end
+function Util:GetTime() end
+--[[
+	@go UnityEngine.GameObject
+	@subnode System.String
+	@return [luaIde#UnityEngine.GameObject]
+--]]
+function Util:Child(go,subnode) end
+--[[
+	@go UnityEngine.GameObject
+	@subnode System.String
+	@return [luaIde#UnityEngine.GameObject]
+--]]
+function Util:Peer(go,subnode) end
+--[[
+	@source System.String
+	return System.String
+--]]
+function Util:md5(source) end
+--[[
+	@file System.String
+	return System.String
+--]]
+function Util:md5file(file) end
+--[[
+	@go UnityEngine.Transform
+--]]
+function Util:ClearChild(go) end
+function Util:ClearMemory() end
+function Util:GetRelativePath() end
+--[[
+	@path System.String
+	return System.String
+--]]
+function Util:GetFileText(path) end
+function Util:AppContentPath() end
+--[[
+	@str System.String
+--]]
+function Util:Log(str) end
+--[[
+	@str System.String
+--]]
+function Util:LogWarning(str) end
+--[[
+	@str System.String
+--]]
+function Util:LogError(str) end
+function Util:CheckRuntimeFile() end
+--[[
+	@module System.String
+	@func System.String
+	@args System.Object{}
+	return System.Object{}
+--]]
+function Util:CallMethod(module,func,args) end
+function Util:CheckEnvironment() end
+
+AppConst = {}
+--[[
+	System.Boolean
+	 Get 
+--]]
+AppConst.DebugMode = 0
+--[[
+	System.Boolean
+	 Get 
+--]]
+AppConst.ExampleMode = 1
+--[[
+	System.Boolean
+	 Get 
+--]]
+AppConst.UpdateMode = 0
+--[[
+	System.Boolean
+	 Get 
+--]]
+AppConst.LuaByteMode = 0
+--[[
+	System.Boolean
+	 Get 
+--]]
+AppConst.LuaBundleMode = 1
+--[[
+	System.Int32
+	 Get 
+--]]
+AppConst.TimerInterval = 1
+--[[
+	System.Int32
+	 Get 
+--]]
+AppConst.GameFrameRate = 30
+--[[
+	System.String
+	 Get 
+--]]
+AppConst.AppName = nil
+--[[
+	System.String
+	 Get 
+--]]
+AppConst.LuaTempDir = nil
+--[[
+	System.String
+	 Get 
+--]]
+AppConst.AppPrefix = nil
+--[[
+	System.String
+	 Get 
+--]]
+AppConst.ExtName = nil
+--[[
+	System.String
+	 Get 
+--]]
+AppConst.AssetDir = nil
+--[[
+	System.String
+	 Get 
+--]]
+AppConst.WebUrl = nil
+--[[
+	System.String
+	 Get 	 Set 
+--]]
+AppConst.UserId = nil
+--[[
+	System.Int32
+	 Get 	 Set 
+--]]
+AppConst.SocketPort = nil
+--[[
+	System.String
+	 Get 	 Set 
+--]]
+AppConst.SocketAddress = nil
+--[[
+	System.String
+	 Get 
+--]]
+AppConst.FrameworkRoot = nil
+
+LuaHelper = {}
+--[[
+	@classname System.String
+	return System.Type
+--]]
+function LuaHelper:GetType(classname) end
+function LuaHelper:GetPanelManager() end
+function LuaHelper:GetResManager() end
+function LuaHelper:GetNetManager() end
+function LuaHelper:GetSoundManager() end
+--[[
+	@data LuaInterface.LuaByteBuffer
+	@func LuaInterface.LuaFunction
+--]]
+function LuaHelper:OnCallLuaFunc(data,func) end
+--[[
+	@data System.String
+	@func LuaInterface.LuaFunction
+--]]
+function LuaHelper:OnJsonCallFunc(data,func) end
+
+--@SuperType [luaIde#System.Object]
+LuaFramework.ByteBuffer = {}
+--[[
+	@return [luaIde#LuaFramework.ByteBuffer]
+]]
+function LuaFramework.ByteBuffer:New() end
+--[[
+	@data System.Byte{}
+	@return [luaIde#LuaFramework.ByteBuffer]
+]]
+function LuaFramework.ByteBuffer:New(data) end
+function LuaFramework.ByteBuffer:Close() end
+--[[
+	@v System.Byte
+--]]
+function LuaFramework.ByteBuffer:WriteByte(v) end
+--[[
+	@v System.Int32
+--]]
+function LuaFramework.ByteBuffer:WriteInt(v) end
+--[[
+	@v System.UInt16
+--]]
+function LuaFramework.ByteBuffer:WriteShort(v) end
+--[[
+	@v System.Int64
+--]]
+function LuaFramework.ByteBuffer:WriteLong(v) end
+--[[
+	@v System.Single
+--]]
+function LuaFramework.ByteBuffer:WriteFloat(v) end
+--[[
+	@v System.Double
+--]]
+function LuaFramework.ByteBuffer:WriteDouble(v) end
+--[[
+	@v System.String
+--]]
+function LuaFramework.ByteBuffer:WriteString(v) end
+--[[
+	@v System.Byte{}
+--]]
+function LuaFramework.ByteBuffer:WriteBytes(v) end
+--[[
+	@strBuffer LuaInterface.LuaByteBuffer
+--]]
+function LuaFramework.ByteBuffer:WriteBuffer(strBuffer) end
+function LuaFramework.ByteBuffer:ReadByte() end
+function LuaFramework.ByteBuffer:ReadInt() end
+function LuaFramework.ByteBuffer:ReadShort() end
+function LuaFramework.ByteBuffer:ReadLong() end
+function LuaFramework.ByteBuffer:ReadFloat() end
+function LuaFramework.ByteBuffer:ReadDouble() end
+function LuaFramework.ByteBuffer:ReadString() end
+function LuaFramework.ByteBuffer:ReadBytes() end
+function LuaFramework.ByteBuffer:ReadBuffer() end
+function LuaFramework.ByteBuffer:ToBytes() end
+function LuaFramework.ByteBuffer:Flush() end
+
+--@SuperType [luaIde#Manager]
+LuaFramework.NetworkManager = {}
+function LuaFramework.NetworkManager:OnInit() end
+function LuaFramework.NetworkManager:Unload() end
+--[[
+	@func System.String
+	@args System.Object{}
+	return System.Object{}
+--]]
+function LuaFramework.NetworkManager:CallMethod(func,args) end
+--[[
+	@_event System.Int32
+	@data LuaFramework.ByteBuffer
+--]]
+function LuaFramework.NetworkManager:AddEvent(_event,data) end
+function LuaFramework.NetworkManager:SendConnect() end
+--[[
+	@buffer LuaFramework.ByteBuffer
+--]]
+function LuaFramework.NetworkManager:SendMessage(buffer) end
 
 --@SuperType [luaIde#System.Object]
 LuaInterface.LuaInjectionStation = {}
@@ -1347,7 +1598,6 @@ function LuaInterface.LuaInjectionStation:New() end
 	@func LuaInterface.LuaFunction
 --]]
 function LuaInterface.LuaInjectionStation:CacheInjectFunction(index,injectFlag,func) end
-function LuaInterface.LuaInjectionStation:Clear() end
 
 --LuaInterface.InjectType  Enum
 LuaInterface.InjectType = {}
@@ -3276,26 +3526,6 @@ function UnityEngine.GameObject:TryGetComponent(type,component) end
 --]]
 function UnityEngine.GameObject:FindWithTag(tag) end
 --[[
-	@methodName System.String
-	@options UnityEngine.SendMessageOptions
---]]
-function UnityEngine.GameObject:SendMessageUpwards(methodName,options) end
---[[
-	@methodName System.String
-	@options UnityEngine.SendMessageOptions
---]]
-function UnityEngine.GameObject:SendMessage(methodName,options) end
---[[
-	@methodName System.String
-	@options UnityEngine.SendMessageOptions
---]]
-function UnityEngine.GameObject:BroadcastMessage(methodName,options) end
---[[
-	@componentType System.Type
-	@return [luaIde#UnityEngine.Component]
---]]
-function UnityEngine.GameObject:AddComponent(componentType) end
---[[
 	@value System.Boolean
 --]]
 function UnityEngine.GameObject:SetActive(value) end
@@ -3319,6 +3549,22 @@ function UnityEngine.GameObject:FindGameObjectsWithTag(tag) end
 	@return [luaIde#UnityEngine.GameObject]
 --]]
 function UnityEngine.GameObject:Find(name) end
+--[[
+	@t System.Type
+--]]
+function UnityEngine.GameObject:AddComponent(t) end
+--[[
+	@methodName System.String
+--]]
+function UnityEngine.GameObject:BroadcastMessage(methodName) end
+--[[
+	@methodName System.String
+--]]
+function UnityEngine.GameObject:SendMessageUpwards(methodName) end
+--[[
+	@methodName System.String
+--]]
+function UnityEngine.GameObject:SendMessage(methodName) end
 
 --@SuperType [luaIde#System.Object]
 UnityEngine.TrackedReference = {}
@@ -5997,11 +6243,6 @@ function Input:ResetInputAxes() end
 function Input:GetJoystickNames() end
 --[[
 	@index System.Int32
-	@return [luaIde#UnityEngine.Touch]
---]]
-function Input:GetTouch(index) end
---[[
-	@index System.Int32
 	return UnityEngine.AccelerationEvent
 --]]
 function Input:GetAccelerationEvent(index) end
@@ -6020,6 +6261,12 @@ function Input:GetKeyUp(key) end
 	return System.Boolean
 --]]
 function Input:GetKeyDown(key) end
+--[[
+	@index System.Int32
+	@flag System.Int32
+	@return [luaIde#UnityEngine.Touch]
+--]]
+function Input:GetTouch(index,flag) end
 
 --UnityEngine.KeyCode  Enum
 UnityEngine.KeyCode = {}
@@ -8879,10 +9126,2216 @@ function LuaProfiler:GetID(name) end
 function LuaProfiler:BeginSample(id) end
 function LuaProfiler:EndSample() end
 
+--@SuperType [luaIde#System.Object]
+UnityEngine.WWWForm = {}
+--[[
+	System.Collections.Generic.Dictionary`2{{System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089},{System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089}}
+	 Get 
+--]]
+UnityEngine.WWWForm.headers = nil
+--[[
+	System.Byte{}
+	 Get 
+--]]
+UnityEngine.WWWForm.data = nil
+--[[
+	@return [luaIde#UnityEngine.WWWForm]
+]]
+function UnityEngine.WWWForm:New() end
+--[[
+	@fieldName System.String
+	@value System.String
+--]]
+function UnityEngine.WWWForm:AddField(fieldName,value) end
+--[[
+	@fieldName System.String
+	@contents System.Byte{}
+--]]
+function UnityEngine.WWWForm:AddBinaryData(fieldName,contents) end
+
+--@SuperType [luaIde#System.Object]
+UnityEngine.EventSystems.EventTrigger.Entry = {}
+--[[
+	UnityEngine.EventSystems.EventTriggerType
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.EventTrigger.Entry.eventID = nil
+--[[
+	@RefType [luaIde#UnityEngine.EventSystems.EventTrigger.TriggerEvent]
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.EventTrigger.Entry.callback = nil
+--[[
+	@return [luaIde#UnityEngine.EventSystems.EventTrigger.Entry]
+]]
+function UnityEngine.EventSystems.EventTrigger.Entry:New() end
+
+--@SuperType [luaIde#UnityEngine.Events.UnityEvent<UnityEngine.EventSystems.BaseEventData>]
+UnityEngine.EventSystems.EventTrigger.TriggerEvent = {}
+--[[
+	@return [luaIde#UnityEngine.EventSystems.EventTrigger.TriggerEvent]
+]]
+function UnityEngine.EventSystems.EventTrigger.TriggerEvent:New() end
+
+--@SuperType [luaIde#UnityEngine.EventSystems.AbstractEventData]
+UnityEngine.EventSystems.BaseEventData = {}
+--[[
+	UnityEngine.EventSystems.BaseInputModule
+	 Get 
+--]]
+UnityEngine.EventSystems.BaseEventData.currentInputModule = nil
+--[[
+	@RefType [luaIde#UnityEngine.GameObject]
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.BaseEventData.selectedObject = nil
+--[[
+	@eventSystem UnityEngine.EventSystems.EventSystem
+	@return [luaIde#UnityEngine.EventSystems.BaseEventData]
+]]
+function UnityEngine.EventSystems.BaseEventData:New(eventSystem) end
+
+--@SuperType [luaIde#UnityEngine.EventSystems.BaseEventData]
+UnityEngine.EventSystems.PointerEventData = {}
+--[[
+	System.Collections.Generic.List`1{{UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null}}
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.hovered = nil
+--[[
+	@RefType [luaIde#UnityEngine.GameObject]
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.pointerEnter = nil
+--[[
+	@RefType [luaIde#UnityEngine.GameObject]
+	 Get 
+--]]
+UnityEngine.EventSystems.PointerEventData.lastPress = nil
+--[[
+	@RefType [luaIde#UnityEngine.GameObject]
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.rawPointerPress = nil
+--[[
+	@RefType [luaIde#UnityEngine.GameObject]
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.pointerDrag = nil
+--[[
+	@RefType [luaIde#UnityEngine.GameObject]
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.pointerClick = nil
+--[[
+	UnityEngine.EventSystems.RaycastResult
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.pointerCurrentRaycast = nil
+--[[
+	UnityEngine.EventSystems.RaycastResult
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.pointerPressRaycast = nil
+--[[
+	System.Boolean
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.eligibleForClick = nil
+--[[
+	System.Int32
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.pointerId = nil
+--[[
+	@RefType [luaIde#UnityEngine.Vector2]
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.position = nil
+--[[
+	@RefType [luaIde#UnityEngine.Vector2]
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.delta = nil
+--[[
+	@RefType [luaIde#UnityEngine.Vector2]
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.pressPosition = nil
+--[[
+	System.Single
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.clickTime = nil
+--[[
+	System.Int32
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.clickCount = nil
+--[[
+	@RefType [luaIde#UnityEngine.Vector2]
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.scrollDelta = nil
+--[[
+	System.Boolean
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.useDragThreshold = nil
+--[[
+	System.Boolean
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.dragging = nil
+--[[
+	UnityEngine.EventSystems.PointerEventData.InputButton
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.button = nil
+--[[
+	@RefType [luaIde#UnityEngine.Camera]
+	 Get 
+--]]
+UnityEngine.EventSystems.PointerEventData.enterEventCamera = nil
+--[[
+	@RefType [luaIde#UnityEngine.Camera]
+	 Get 
+--]]
+UnityEngine.EventSystems.PointerEventData.pressEventCamera = nil
+--[[
+	@RefType [luaIde#UnityEngine.GameObject]
+	 Get 	 Set 
+--]]
+UnityEngine.EventSystems.PointerEventData.pointerPress = nil
+--[[
+	@eventSystem UnityEngine.EventSystems.EventSystem
+	@return [luaIde#UnityEngine.EventSystems.PointerEventData]
+]]
+function UnityEngine.EventSystems.PointerEventData:New(eventSystem) end
+function UnityEngine.EventSystems.PointerEventData:IsPointerMoving() end
+function UnityEngine.EventSystems.PointerEventData:IsScrolling() end
+function UnityEngine.EventSystems.PointerEventData:ToString() end
+
+--@SuperType [luaIde#UnityGameFramework.Runtime.GameFrameworkComponent]
+UnityGameFramework.Runtime.ProcedureComponent = {}
+--[[
+	GameFramework.Procedure.ProcedureBase
+	 Get 
+--]]
+UnityGameFramework.Runtime.ProcedureComponent.CurrentProcedure = nil
+--[[
+	System.Single
+	 Get 
+--]]
+UnityGameFramework.Runtime.ProcedureComponent.CurrentProcedureTime = nil
+--[[
+	@procedureType System.Type
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.ProcedureComponent:HasProcedure(procedureType) end
+--[[
+	@procedureType System.Type
+	return GameFramework.Procedure.ProcedureBase
+--]]
+function UnityGameFramework.Runtime.ProcedureComponent:GetProcedure(procedureType) end
+
+GameEntry = {}
+--[[
+	@type System.Type
+	@return [luaIde#UnityGameFramework.Runtime.GameFrameworkComponent]
+--]]
+function GameEntry:GetComponent(type) end
+--[[
+	@shutdownType UnityGameFramework.Runtime.ShutdownType
+--]]
+function GameEntry:Shutdown(shutdownType) end
+
+--@SuperType [luaIde#UnityGameFramework.Runtime.GameFrameworkComponent]
+UnityGameFramework.Runtime.SoundComponent = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.SoundComponent.SoundGroupCount = nil
+--[[
+	UnityEngine.Audio.AudioMixer
+	 Get 
+--]]
+UnityGameFramework.Runtime.SoundComponent.AudioMixer = nil
+--[[
+	@soundGroupName System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.SoundComponent:HasSoundGroup(soundGroupName) end
+--[[
+	@soundGroupName System.String
+	return GameFramework.Sound.ISoundGroup
+--]]
+function UnityGameFramework.Runtime.SoundComponent:GetSoundGroup(soundGroupName) end
+function UnityGameFramework.Runtime.SoundComponent:GetAllSoundGroups() end
+--[[
+	@soundGroupName System.String
+	@soundAgentHelperCount System.Int32
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.SoundComponent:AddSoundGroup(soundGroupName,soundAgentHelperCount) end
+function UnityGameFramework.Runtime.SoundComponent:GetAllLoadingSoundSerialIds() end
+--[[
+	@serialId System.Int32
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.SoundComponent:IsLoadingSound(serialId) end
+--[[
+	@soundAssetName System.String
+	@soundGroupName System.String
+	return System.Int32
+--]]
+function UnityGameFramework.Runtime.SoundComponent:PlaySound(soundAssetName,soundGroupName) end
+--[[
+	@serialId System.Int32
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.SoundComponent:StopSound(serialId) end
+function UnityGameFramework.Runtime.SoundComponent:StopAllLoadedSounds() end
+function UnityGameFramework.Runtime.SoundComponent:StopAllLoadingSounds() end
+--[[
+	@serialId System.Int32
+--]]
+function UnityGameFramework.Runtime.SoundComponent:PauseSound(serialId) end
+--[[
+	@serialId System.Int32
+--]]
+function UnityGameFramework.Runtime.SoundComponent:ResumeSound(serialId) end
+
+--@SuperType [luaIde#UnityGameFramework.Runtime.GameFrameworkComponent]
+UnityGameFramework.Runtime.BaseComponent = {}
+--[[
+	System.Boolean
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.BaseComponent.EditorResourceMode = nil
+--[[
+	GameFramework.Localization.Language
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.BaseComponent.EditorLanguage = nil
+--[[
+	GameFramework.Resource.IResourceManager
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.BaseComponent.EditorResourceHelper = nil
+--[[
+	System.Int32
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.BaseComponent.FrameRate = nil
+--[[
+	System.Single
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.BaseComponent.GameSpeed = nil
+--[[
+	System.Boolean
+	 Get 
+--]]
+UnityGameFramework.Runtime.BaseComponent.IsGamePaused = nil
+--[[
+	System.Boolean
+	 Get 
+--]]
+UnityGameFramework.Runtime.BaseComponent.IsNormalGameSpeed = nil
+--[[
+	System.Boolean
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.BaseComponent.RunInBackground = nil
+--[[
+	System.Boolean
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.BaseComponent.NeverSleep = nil
+function UnityGameFramework.Runtime.BaseComponent:PauseGame() end
+function UnityGameFramework.Runtime.BaseComponent:ResumeGame() end
+function UnityGameFramework.Runtime.BaseComponent:ResetNormalGameSpeed() end
+
+--@SuperType [luaIde#UnityGameFramework.Runtime.GameFrameworkComponent]
+UnityGameFramework.Runtime.ResourceComponent = {}
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.ReadOnlyPath = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.ReadWritePath = nil
+--[[
+	GameFramework.Resource.ResourceMode
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.ResourceMode = nil
+--[[
+	UnityGameFramework.Runtime.ReadWritePathType
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.ReadWritePathType = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.CurrentVariant = nil
+--[[
+	GameFramework.Resource.PackageVersionListSerializer
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.PackageVersionListSerializer = nil
+--[[
+	GameFramework.Resource.UpdatableVersionListSerializer
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.UpdatableVersionListSerializer = nil
+--[[
+	GameFramework.Resource.ReadOnlyVersionListSerializer
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.ReadOnlyVersionListSerializer = nil
+--[[
+	GameFramework.Resource.ReadWriteVersionListSerializer
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.ReadWriteVersionListSerializer = nil
+--[[
+	GameFramework.Resource.ResourcePackVersionListSerializer
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.ResourcePackVersionListSerializer = nil
+--[[
+	System.Single
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.LastUnloadUnusedAssetsOperationElapseSeconds = nil
+--[[
+	System.Single
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.MinUnloadUnusedAssetsInterval = nil
+--[[
+	System.Single
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.MaxUnloadUnusedAssetsInterval = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.ApplicableGameVersion = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.InternalResourceVersion = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.AssetCount = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.ResourceCount = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.ResourceGroupCount = nil
+--[[
+	System.String
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.UpdatePrefixUri = nil
+--[[
+	System.Int32
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.GenerateReadWriteVersionListLength = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.ApplyingResourcePackPath = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.ApplyWaitingCount = nil
+--[[
+	System.Int32
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.UpdateRetryCount = nil
+--[[
+	GameFramework.Resource.IResourceGroup
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.UpdatingResourceGroup = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.UpdateWaitingCount = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.UpdateWaitingWhilePlayingCount = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.UpdateCandidateCount = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.LoadTotalAgentCount = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.LoadFreeAgentCount = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.LoadWorkingAgentCount = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.LoadWaitingTaskCount = nil
+--[[
+	System.Single
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.AssetAutoReleaseInterval = nil
+--[[
+	System.Int32
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.AssetCapacity = nil
+--[[
+	System.Single
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.AssetExpireTime = nil
+--[[
+	System.Int32
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.AssetPriority = nil
+--[[
+	System.Single
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.ResourceAutoReleaseInterval = nil
+--[[
+	System.Int32
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.ResourceCapacity = nil
+--[[
+	System.Single
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.ResourceExpireTime = nil
+--[[
+	System.Int32
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.ResourceComponent.ResourcePriority = nil
+--[[
+	@resourceMode GameFramework.Resource.ResourceMode
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:SetResourceMode(resourceMode) end
+--[[
+	@currentVariant System.String
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:SetCurrentVariant(currentVariant) end
+--[[
+	@decryptResourceCallback GameFramework.Resource.DecryptResourceCallback
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:SetDecryptResourceCallback(decryptResourceCallback) end
+--[[
+	@performGCCollect System.Boolean
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:UnloadUnusedAssets(performGCCollect) end
+--[[
+	@performGCCollect System.Boolean
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:ForceUnloadUnusedAssets(performGCCollect) end
+--[[
+	@initResourcesCompleteCallback GameFramework.Resource.InitResourcesCompleteCallback
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:InitResources(initResourcesCompleteCallback) end
+--[[
+	@latestInternalResourceVersion System.Int32
+	return GameFramework.Resource.CheckVersionListResult
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:CheckVersionList(latestInternalResourceVersion) end
+--[[
+	@versionListLength System.Int32
+	@versionListHashCode System.Int32
+	@versionListCompressedLength System.Int32
+	@versionListCompressedHashCode System.Int32
+	@updateVersionListCallbacks GameFramework.Resource.UpdateVersionListCallbacks
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:UpdateVersionList(versionListLength,versionListHashCode,versionListCompressedLength,versionListCompressedHashCode,updateVersionListCallbacks) end
+--[[
+	@verifyResourcesCompleteCallback GameFramework.Resource.VerifyResourcesCompleteCallback
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:VerifyResources(verifyResourcesCompleteCallback) end
+--[[
+	@checkResourcesCompleteCallback GameFramework.Resource.CheckResourcesCompleteCallback
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:CheckResources(checkResourcesCompleteCallback) end
+--[[
+	@resourcePackPath System.String
+	@applyResourcesCompleteCallback GameFramework.Resource.ApplyResourcesCompleteCallback
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:ApplyResources(resourcePackPath,applyResourcesCompleteCallback) end
+--[[
+	@updateResourcesCompleteCallback GameFramework.Resource.UpdateResourcesCompleteCallback
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:UpdateResources(updateResourcesCompleteCallback) end
+function UnityGameFramework.Runtime.ResourceComponent:StopUpdateResources() end
+--[[
+	@resourcePackPath System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:VerifyResourcePack(resourcePackPath) end
+function UnityGameFramework.Runtime.ResourceComponent:GetAllLoadAssetInfos() end
+--[[
+	@assetName System.String
+	return GameFramework.Resource.HasAssetResult
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:HasAsset(assetName) end
+--[[
+	@assetName System.String
+	@loadAssetCallbacks GameFramework.Resource.LoadAssetCallbacks
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:LoadAsset(assetName,loadAssetCallbacks) end
+--[[
+	@asset System.Object
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:UnloadAsset(asset) end
+--[[
+	@binaryAssetName System.String
+	return System.String
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:GetBinaryPath(binaryAssetName) end
+--[[
+	@binaryAssetName System.String
+	return System.Int32
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:GetBinaryLength(binaryAssetName) end
+--[[
+	@binaryAssetName System.String
+	@loadBinaryCallbacks GameFramework.Resource.LoadBinaryCallbacks
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:LoadBinary(binaryAssetName,loadBinaryCallbacks) end
+--[[
+	@binaryAssetName System.String
+	return System.Byte{}
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:LoadBinaryFromFileSystem(binaryAssetName) end
+--[[
+	@binaryAssetName System.String
+	@length System.Int32
+	return System.Byte{}
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:LoadBinarySegmentFromFileSystem(binaryAssetName,length) end
+--[[
+	@resourceGroupName System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:HasResourceGroup(resourceGroupName) end
+function UnityGameFramework.Runtime.ResourceComponent:GetResourceGroup() end
+function UnityGameFramework.Runtime.ResourceComponent:GetAllResourceGroups() end
+--[[
+	@resourceGroupNames System.String{}
+	return GameFramework.Resource.IResourceGroupCollection
+--]]
+function UnityGameFramework.Runtime.ResourceComponent:GetResourceGroupCollection(resourceGroupNames) end
+
+--@SuperType [luaIde#UnityGameFramework.Runtime.GameFrameworkComponent]
+UnityGameFramework.Runtime.WebRequestComponent = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.WebRequestComponent.TotalAgentCount = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.WebRequestComponent.FreeAgentCount = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.WebRequestComponent.WorkingAgentCount = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.WebRequestComponent.WaitingTaskCount = nil
+--[[
+	System.Single
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.WebRequestComponent.Timeout = nil
+--[[
+	@serialId System.Int32
+	return GameFramework.TaskInfo
+--]]
+function UnityGameFramework.Runtime.WebRequestComponent:GetWebRequestInfo(serialId) end
+--[[
+	@tag System.String
+	return GameFramework.TaskInfo{}
+--]]
+function UnityGameFramework.Runtime.WebRequestComponent:GetWebRequestInfos(tag) end
+--[[
+	@tag System.String
+	@results System.Collections.Generic.List`1{{GameFramework.TaskInfo, GameFramework, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null}}
+--]]
+function UnityGameFramework.Runtime.WebRequestComponent:GetAllWebRequestInfos(tag,results) end
+--[[
+	@webRequestUri System.String
+	return System.Int32
+--]]
+function UnityGameFramework.Runtime.WebRequestComponent:AddWebRequest(webRequestUri) end
+--[[
+	@serialId System.Int32
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.WebRequestComponent:RemoveWebRequest(serialId) end
+--[[
+	@tag System.String
+	return System.Int32
+--]]
+function UnityGameFramework.Runtime.WebRequestComponent:RemoveWebRequests(tag) end
+function UnityGameFramework.Runtime.WebRequestComponent:RemoveAllWebRequests() end
+
+--@SuperType [luaIde#UnityGameFramework.Runtime.GameFrameworkComponent]
+UnityGameFramework.Runtime.ConfigComponent = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ConfigComponent.Count = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ConfigComponent.CachedBytesSize = nil
+--[[
+	@ensureSize System.Int32
+--]]
+function UnityGameFramework.Runtime.ConfigComponent:EnsureCachedBytesSize(ensureSize) end
+function UnityGameFramework.Runtime.ConfigComponent:FreeCachedBytes() end
+--[[
+	@configAssetName System.String
+--]]
+function UnityGameFramework.Runtime.ConfigComponent:ReadData(configAssetName) end
+--[[
+	@configString System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.ConfigComponent:ParseData(configString) end
+--[[
+	@configName System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.ConfigComponent:HasConfig(configName) end
+--[[
+	@configName System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.ConfigComponent:GetBool(configName) end
+--[[
+	@configName System.String
+	return System.Int32
+--]]
+function UnityGameFramework.Runtime.ConfigComponent:GetInt(configName) end
+--[[
+	@configName System.String
+	return System.Single
+--]]
+function UnityGameFramework.Runtime.ConfigComponent:GetFloat(configName) end
+--[[
+	@configName System.String
+	return System.String
+--]]
+function UnityGameFramework.Runtime.ConfigComponent:GetString(configName) end
+--[[
+	@configName System.String
+	@boolValue System.Boolean
+	@intValue System.Int32
+	@floatValue System.Single
+	@stringValue System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.ConfigComponent:AddConfig(configName,boolValue,intValue,floatValue,stringValue) end
+--[[
+	@configName System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.ConfigComponent:RemoveConfig(configName) end
+function UnityGameFramework.Runtime.ConfigComponent:RemoveAllConfigs() end
+
+--@SuperType [luaIde#UnityGameFramework.Runtime.GameFrameworkComponent]
+UnityGameFramework.Runtime.DataTableComponent = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.DataTableComponent.Count = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.DataTableComponent.CachedBytesSize = nil
+--[[
+	@ensureSize System.Int32
+--]]
+function UnityGameFramework.Runtime.DataTableComponent:EnsureCachedBytesSize(ensureSize) end
+function UnityGameFramework.Runtime.DataTableComponent:FreeCachedBytes() end
+--[[
+	@dataRowType System.Type
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.DataTableComponent:HasDataTable(dataRowType) end
+--[[
+	@dataRowType System.Type
+	return GameFramework.DataTable.DataTableBase
+--]]
+function UnityGameFramework.Runtime.DataTableComponent:GetDataTable(dataRowType) end
+function UnityGameFramework.Runtime.DataTableComponent:GetAllDataTables() end
+--[[
+	@dataRowType System.Type
+	return GameFramework.DataTable.DataTableBase
+--]]
+function UnityGameFramework.Runtime.DataTableComponent:CreateDataTable(dataRowType) end
+--[[
+	@dataRowType System.Type
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.DataTableComponent:DestroyDataTable(dataRowType) end
+
+--@SuperType [luaIde#UnityGameFramework.Runtime.GameFrameworkComponent]
+UnityGameFramework.Runtime.SceneComponent = {}
+--[[
+	@RefType [luaIde#UnityEngine.Camera]
+	 Get 
+--]]
+UnityGameFramework.Runtime.SceneComponent.MainCamera = nil
+--[[
+	@sceneAssetName System.String
+	return System.String
+--]]
+function UnityGameFramework.Runtime.SceneComponent:GetSceneName(sceneAssetName) end
+--[[
+	@sceneAssetName System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.SceneComponent:SceneIsLoaded(sceneAssetName) end
+function UnityGameFramework.Runtime.SceneComponent:GetLoadedSceneAssetNames() end
+--[[
+	@sceneAssetName System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.SceneComponent:SceneIsLoading(sceneAssetName) end
+function UnityGameFramework.Runtime.SceneComponent:GetLoadingSceneAssetNames() end
+--[[
+	@sceneAssetName System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.SceneComponent:SceneIsUnloading(sceneAssetName) end
+function UnityGameFramework.Runtime.SceneComponent:GetUnloadingSceneAssetNames() end
+--[[
+	@sceneAssetName System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.SceneComponent:HasScene(sceneAssetName) end
+--[[
+	@sceneAssetName System.String
+--]]
+function UnityGameFramework.Runtime.SceneComponent:LoadScene(sceneAssetName) end
+--[[
+	@sceneAssetName System.String
+--]]
+function UnityGameFramework.Runtime.SceneComponent:UnloadScene(sceneAssetName) end
+--[[
+	@sceneAssetName System.String
+	@sceneOrder System.Int32
+--]]
+function UnityGameFramework.Runtime.SceneComponent:SetSceneOrder(sceneAssetName,sceneOrder) end
+function UnityGameFramework.Runtime.SceneComponent:RefreshMainCamera() end
+
+--@SuperType [luaIde#UnityGameFramework.Runtime.GameFrameworkComponent]
+UnityGameFramework.Runtime.ObjectPoolComponent = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ObjectPoolComponent.Count = nil
+--[[
+	@objectType System.Type
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.ObjectPoolComponent:HasObjectPool(objectType) end
+--[[
+	@objectType System.Type
+	return GameFramework.ObjectPool.ObjectPoolBase
+--]]
+function UnityGameFramework.Runtime.ObjectPoolComponent:GetObjectPool(objectType) end
+--[[
+	@condition System.Predicate`1{{GameFramework.ObjectPool.ObjectPoolBase, GameFramework, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null}}
+	return GameFramework.ObjectPool.ObjectPoolBase{}
+--]]
+function UnityGameFramework.Runtime.ObjectPoolComponent:GetObjectPools(condition) end
+function UnityGameFramework.Runtime.ObjectPoolComponent:GetAllObjectPools() end
+--[[
+	@objectType System.Type
+	return GameFramework.ObjectPool.ObjectPoolBase
+--]]
+function UnityGameFramework.Runtime.ObjectPoolComponent:CreateSingleSpawnObjectPool(objectType) end
+--[[
+	@objectType System.Type
+	return GameFramework.ObjectPool.ObjectPoolBase
+--]]
+function UnityGameFramework.Runtime.ObjectPoolComponent:CreateMultiSpawnObjectPool(objectType) end
+--[[
+	@objectType System.Type
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.ObjectPoolComponent:DestroyObjectPool(objectType) end
+function UnityGameFramework.Runtime.ObjectPoolComponent:Release() end
+function UnityGameFramework.Runtime.ObjectPoolComponent:ReleaseAllUnused() end
+
+--@SuperType [luaIde#UnityGameFramework.Runtime.GameFrameworkComponent]
+UnityGameFramework.Runtime.EventComponent = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.EventComponent.EventHandlerCount = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.EventComponent.EventCount = nil
+--[[
+	@id System.Int32
+	return System.Int32
+--]]
+function UnityGameFramework.Runtime.EventComponent:Count(id) end
+--[[
+	@id System.Int32
+	@handler System.EventHandler`1{{GameFramework.Event.GameEventArgs, GameFramework, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null}}
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.EventComponent:Check(id,handler) end
+--[[
+	@id System.Int32
+	@handler System.EventHandler`1{{GameFramework.Event.GameEventArgs, GameFramework, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null}}
+--]]
+function UnityGameFramework.Runtime.EventComponent:Subscribe(id,handler) end
+--[[
+	@id System.Int32
+	@handler System.EventHandler`1{{GameFramework.Event.GameEventArgs, GameFramework, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null}}
+--]]
+function UnityGameFramework.Runtime.EventComponent:Unsubscribe(id,handler) end
+--[[
+	@handler System.EventHandler`1{{GameFramework.Event.GameEventArgs, GameFramework, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null}}
+--]]
+function UnityGameFramework.Runtime.EventComponent:SetDefaultHandler(handler) end
+--[[
+	@sender System.Object
+	@e GameFramework.Event.GameEventArgs
+--]]
+function UnityGameFramework.Runtime.EventComponent:Fire(sender,e) end
+--[[
+	@sender System.Object
+	@e GameFramework.Event.GameEventArgs
+--]]
+function UnityGameFramework.Runtime.EventComponent:FireNow(sender,e) end
+
+--@SuperType [luaIde#UnityGameFramework.Runtime.GameFrameworkComponent]
+UnityGameFramework.Runtime.EntityComponent = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.EntityComponent.EntityCount = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.EntityComponent.EntityGroupCount = nil
+--[[
+	@entityGroupName System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.EntityComponent:HasEntityGroup(entityGroupName) end
+--[[
+	@entityGroupName System.String
+	return GameFramework.Entity.IEntityGroup
+--]]
+function UnityGameFramework.Runtime.EntityComponent:GetEntityGroup(entityGroupName) end
+function UnityGameFramework.Runtime.EntityComponent:GetAllEntityGroups() end
+--[[
+	@entityGroupName System.String
+	@instanceAutoReleaseInterval System.Single
+	@instanceCapacity System.Int32
+	@instanceExpireTime System.Single
+	@instancePriority System.Int32
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.EntityComponent:AddEntityGroup(entityGroupName,instanceAutoReleaseInterval,instanceCapacity,instanceExpireTime,instancePriority) end
+--[[
+	@entityId System.Int32
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.EntityComponent:HasEntity(entityId) end
+--[[
+	@entityId System.Int32
+	@return [luaIde#UnityGameFramework.Runtime.Entity]
+--]]
+function UnityGameFramework.Runtime.EntityComponent:GetEntity(entityId) end
+--[[
+	@entityAssetName System.String
+	return UnityGameFramework.Runtime.Entity{}
+--]]
+function UnityGameFramework.Runtime.EntityComponent:GetEntities(entityAssetName) end
+function UnityGameFramework.Runtime.EntityComponent:GetAllLoadedEntities() end
+function UnityGameFramework.Runtime.EntityComponent:GetAllLoadingEntityIds() end
+--[[
+	@entityId System.Int32
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.EntityComponent:IsLoadingEntity(entityId) end
+--[[
+	@entity UnityGameFramework.Runtime.Entity
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.EntityComponent:IsValidEntity(entity) end
+--[[
+	@entityId System.Int32
+	@entityLogicType System.Type
+	@entityAssetName System.String
+	@entityGroupName System.String
+--]]
+function UnityGameFramework.Runtime.EntityComponent:ShowEntity(entityId,entityLogicType,entityAssetName,entityGroupName) end
+--[[
+	@entityId System.Int32
+--]]
+function UnityGameFramework.Runtime.EntityComponent:HideEntity(entityId) end
+function UnityGameFramework.Runtime.EntityComponent:HideAllLoadedEntities() end
+function UnityGameFramework.Runtime.EntityComponent:HideAllLoadingEntities() end
+--[[
+	@childEntityId System.Int32
+	@return [luaIde#UnityGameFramework.Runtime.Entity]
+--]]
+function UnityGameFramework.Runtime.EntityComponent:GetParentEntity(childEntityId) end
+--[[
+	@parentEntityId System.Int32
+	return System.Int32
+--]]
+function UnityGameFramework.Runtime.EntityComponent:GetChildEntityCount(parentEntityId) end
+--[[
+	@parentEntityId System.Int32
+	@return [luaIde#UnityGameFramework.Runtime.Entity]
+--]]
+function UnityGameFramework.Runtime.EntityComponent:GetChildEntity(parentEntityId) end
+--[[
+	@parentEntityId System.Int32
+	return UnityGameFramework.Runtime.Entity{}
+--]]
+function UnityGameFramework.Runtime.EntityComponent:GetChildEntities(parentEntityId) end
+--[[
+	@childEntityId System.Int32
+	@parentEntityId System.Int32
+--]]
+function UnityGameFramework.Runtime.EntityComponent:AttachEntity(childEntityId,parentEntityId) end
+--[[
+	@childEntityId System.Int32
+--]]
+function UnityGameFramework.Runtime.EntityComponent:DetachEntity(childEntityId) end
+--[[
+	@parentEntityId System.Int32
+--]]
+function UnityGameFramework.Runtime.EntityComponent:DetachChildEntities(parentEntityId) end
+--[[
+	@entity UnityGameFramework.Runtime.Entity
+	@locked System.Boolean
+--]]
+function UnityGameFramework.Runtime.EntityComponent:SetEntityInstanceLocked(entity,locked) end
+--[[
+	@entity UnityGameFramework.Runtime.Entity
+	@priority System.Int32
+--]]
+function UnityGameFramework.Runtime.EntityComponent:SetInstancePriority(entity,priority) end
+
+--@SuperType [luaIde#UnityGameFramework.Runtime.GameFrameworkComponent]
+UnityGameFramework.Runtime.SettingComponent = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.SettingComponent.Count = nil
+function UnityGameFramework.Runtime.SettingComponent:Save() end
+function UnityGameFramework.Runtime.SettingComponent:GetAllSettingNames() end
+--[[
+	@settingName System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.SettingComponent:HasSetting(settingName) end
+--[[
+	@settingName System.String
+--]]
+function UnityGameFramework.Runtime.SettingComponent:RemoveSetting(settingName) end
+function UnityGameFramework.Runtime.SettingComponent:RemoveAllSettings() end
+--[[
+	@settingName System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.SettingComponent:GetBool(settingName) end
+--[[
+	@settingName System.String
+	@value System.Boolean
+--]]
+function UnityGameFramework.Runtime.SettingComponent:SetBool(settingName,value) end
+--[[
+	@settingName System.String
+	return System.Int32
+--]]
+function UnityGameFramework.Runtime.SettingComponent:GetInt(settingName) end
+--[[
+	@settingName System.String
+	@value System.Int32
+--]]
+function UnityGameFramework.Runtime.SettingComponent:SetInt(settingName,value) end
+--[[
+	@settingName System.String
+	return System.Single
+--]]
+function UnityGameFramework.Runtime.SettingComponent:GetFloat(settingName) end
+--[[
+	@settingName System.String
+	@value System.Single
+--]]
+function UnityGameFramework.Runtime.SettingComponent:SetFloat(settingName,value) end
+--[[
+	@settingName System.String
+	return System.String
+--]]
+function UnityGameFramework.Runtime.SettingComponent:GetString(settingName) end
+--[[
+	@settingName System.String
+	@value System.String
+--]]
+function UnityGameFramework.Runtime.SettingComponent:SetString(settingName,value) end
+--[[
+	@objectType System.Type
+	@settingName System.String
+	return System.Object
+--]]
+function UnityGameFramework.Runtime.SettingComponent:GetObject(objectType,settingName) end
+--[[
+	@settingName System.String
+	@obj System.Object
+--]]
+function UnityGameFramework.Runtime.SettingComponent:SetObject(settingName,obj) end
+
+--@SuperType [luaIde#UnityGameFramework.Runtime.GameFrameworkComponent]
+UnityGameFramework.Runtime.UIComponent = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.UIComponent.UIGroupCount = nil
+--[[
+	System.Single
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.UIComponent.InstanceAutoReleaseInterval = nil
+--[[
+	System.Int32
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.UIComponent.InstanceCapacity = nil
+--[[
+	System.Single
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.UIComponent.InstanceExpireTime = nil
+--[[
+	System.Int32
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.UIComponent.InstancePriority = nil
+--[[
+	@uiGroupName System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.UIComponent:HasUIGroup(uiGroupName) end
+--[[
+	@uiGroupName System.String
+	return GameFramework.UI.IUIGroup
+--]]
+function UnityGameFramework.Runtime.UIComponent:GetUIGroup(uiGroupName) end
+function UnityGameFramework.Runtime.UIComponent:GetAllUIGroups() end
+--[[
+	@uiGroupName System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.UIComponent:AddUIGroup(uiGroupName) end
+--[[
+	@serialId System.Int32
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.UIComponent:HasUIForm(serialId) end
+--[[
+	@serialId System.Int32
+	return UnityGameFramework.Runtime.UIForm
+--]]
+function UnityGameFramework.Runtime.UIComponent:GetUIForm(serialId) end
+--[[
+	@uiFormAssetName System.String
+	return UnityGameFramework.Runtime.UIForm{}
+--]]
+function UnityGameFramework.Runtime.UIComponent:GetUIForms(uiFormAssetName) end
+function UnityGameFramework.Runtime.UIComponent:GetAllLoadedUIForms() end
+function UnityGameFramework.Runtime.UIComponent:GetAllLoadingUIFormSerialIds() end
+--[[
+	@serialId System.Int32
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.UIComponent:IsLoadingUIForm(serialId) end
+--[[
+	@uiForm UnityGameFramework.Runtime.UIForm
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.UIComponent:IsValidUIForm(uiForm) end
+--[[
+	@uiFormAssetName System.String
+	@uiGroupName System.String
+	return System.Int32
+--]]
+function UnityGameFramework.Runtime.UIComponent:OpenUIForm(uiFormAssetName,uiGroupName) end
+--[[
+	@serialId System.Int32
+--]]
+function UnityGameFramework.Runtime.UIComponent:CloseUIForm(serialId) end
+function UnityGameFramework.Runtime.UIComponent:CloseAllLoadedUIForms() end
+function UnityGameFramework.Runtime.UIComponent:CloseAllLoadingUIForms() end
+--[[
+	@uiForm UnityGameFramework.Runtime.UIForm
+--]]
+function UnityGameFramework.Runtime.UIComponent:RefocusUIForm(uiForm) end
+--[[
+	@uiForm UnityGameFramework.Runtime.UIForm
+	@locked System.Boolean
+--]]
+function UnityGameFramework.Runtime.UIComponent:SetUIFormInstanceLocked(uiForm,locked) end
+--[[
+	@uiForm UnityGameFramework.Runtime.UIForm
+	@priority System.Int32
+--]]
+function UnityGameFramework.Runtime.UIComponent:SetUIFormInstancePriority(uiForm,priority) end
+
+--@SuperType [luaIde#UnityGameFramework.Runtime.GameFrameworkComponent]
+UnityGameFramework.Runtime.NetworkComponent = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.NetworkComponent.NetworkChannelCount = nil
+--[[
+	@name System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.NetworkComponent:HasNetworkChannel(name) end
+--[[
+	@name System.String
+	return GameFramework.Network.INetworkChannel
+--]]
+function UnityGameFramework.Runtime.NetworkComponent:GetNetworkChannel(name) end
+function UnityGameFramework.Runtime.NetworkComponent:GetAllNetworkChannels() end
+--[[
+	@name System.String
+	@serviceType GameFramework.Network.ServiceType
+	@networkChannelHelper GameFramework.Network.INetworkChannelHelper
+	return GameFramework.Network.INetworkChannel
+--]]
+function UnityGameFramework.Runtime.NetworkComponent:CreateNetworkChannel(name,serviceType,networkChannelHelper) end
+--[[
+	@name System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.NetworkComponent:DestroyNetworkChannel(name) end
+
+--@SuperType [luaIde#UnityGameFramework.Runtime.GameFrameworkComponent]
+UnityGameFramework.Runtime.LocalizationComponent = {}
+--[[
+	GameFramework.Localization.Language
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.LocalizationComponent.Language = nil
+--[[
+	GameFramework.Localization.Language
+	 Get 
+--]]
+UnityGameFramework.Runtime.LocalizationComponent.SystemLanguage = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.LocalizationComponent.DictionaryCount = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.LocalizationComponent.CachedBytesSize = nil
+--[[
+	@ensureSize System.Int32
+--]]
+function UnityGameFramework.Runtime.LocalizationComponent:EnsureCachedBytesSize(ensureSize) end
+function UnityGameFramework.Runtime.LocalizationComponent:FreeCachedBytes() end
+--[[
+	@dictionaryAssetName System.String
+--]]
+function UnityGameFramework.Runtime.LocalizationComponent:ReadData(dictionaryAssetName) end
+--[[
+	@dictionaryString System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.LocalizationComponent:ParseData(dictionaryString) end
+--[[
+	@key System.String
+	return System.String
+--]]
+function UnityGameFramework.Runtime.LocalizationComponent:GetString(key) end
+--[[
+	@key System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.LocalizationComponent:HasRawString(key) end
+--[[
+	@key System.String
+	return System.String
+--]]
+function UnityGameFramework.Runtime.LocalizationComponent:GetRawString(key) end
+--[[
+	@key System.String
+	return System.Boolean
+--]]
+function UnityGameFramework.Runtime.LocalizationComponent:RemoveRawString(key) end
+function UnityGameFramework.Runtime.LocalizationComponent:RemoveAllRawStrings() end
+
+GameFrameworkLog = {}
+--[[
+	@logHelper GameFramework.GameFrameworkLog.ILogHelper
+--]]
+function GameFrameworkLog:SetLogHelper(logHelper) end
+--[[
+	@message System.Object
+--]]
+function GameFrameworkLog:Debug(message) end
+--[[
+	@message System.Object
+--]]
+function GameFrameworkLog:Info(message) end
+--[[
+	@message System.Object
+--]]
+function GameFrameworkLog:Warning(message) end
+--[[
+	@message System.Object
+--]]
+function GameFrameworkLog:Error(message) end
+--[[
+	@message System.Object
+--]]
+function GameFrameworkLog:Fatal(message) end
+
+--@SuperType [luaIde#GameFramework.Event.GameEventArgs]
+UnityGameFramework.Runtime.NetworkConnectedEventArgs = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.NetworkConnectedEventArgs.EventId = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.NetworkConnectedEventArgs.Id = nil
+--[[
+	GameFramework.Network.INetworkChannel
+	 Get 
+--]]
+UnityGameFramework.Runtime.NetworkConnectedEventArgs.NetworkChannel = nil
+--[[
+	System.Object
+	 Get 
+--]]
+UnityGameFramework.Runtime.NetworkConnectedEventArgs.UserData = nil
+--[[
+	@return [luaIde#UnityGameFramework.Runtime.NetworkConnectedEventArgs]
+]]
+function UnityGameFramework.Runtime.NetworkConnectedEventArgs:New() end
+--[[
+	@e GameFramework.Network.NetworkConnectedEventArgs
+	@return [luaIde#UnityGameFramework.Runtime.NetworkConnectedEventArgs]
+--]]
+function UnityGameFramework.Runtime.NetworkConnectedEventArgs:Create(e) end
+function UnityGameFramework.Runtime.NetworkConnectedEventArgs:Clear() end
+
+--@SuperType [luaIde#GameFramework.Event.GameEventArgs]
+UnityGameFramework.Runtime.NetworkCustomErrorEventArgs = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.NetworkCustomErrorEventArgs.EventId = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.NetworkCustomErrorEventArgs.Id = nil
+--[[
+	GameFramework.Network.INetworkChannel
+	 Get 
+--]]
+UnityGameFramework.Runtime.NetworkCustomErrorEventArgs.NetworkChannel = nil
+--[[
+	System.Object
+	 Get 
+--]]
+UnityGameFramework.Runtime.NetworkCustomErrorEventArgs.CustomErrorData = nil
+--[[
+	@return [luaIde#UnityGameFramework.Runtime.NetworkCustomErrorEventArgs]
+]]
+function UnityGameFramework.Runtime.NetworkCustomErrorEventArgs:New() end
+--[[
+	@e GameFramework.Network.NetworkCustomErrorEventArgs
+	@return [luaIde#UnityGameFramework.Runtime.NetworkCustomErrorEventArgs]
+--]]
+function UnityGameFramework.Runtime.NetworkCustomErrorEventArgs:Create(e) end
+function UnityGameFramework.Runtime.NetworkCustomErrorEventArgs:Clear() end
+
+--@SuperType [luaIde#GameFramework.Event.GameEventArgs]
+UnityGameFramework.Runtime.NetworkErrorEventArgs = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.NetworkErrorEventArgs.EventId = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.NetworkErrorEventArgs.Id = nil
+--[[
+	GameFramework.Network.INetworkChannel
+	 Get 
+--]]
+UnityGameFramework.Runtime.NetworkErrorEventArgs.NetworkChannel = nil
+--[[
+	GameFramework.Network.NetworkErrorCode
+	 Get 
+--]]
+UnityGameFramework.Runtime.NetworkErrorEventArgs.ErrorCode = nil
+--[[
+	System.Net.Sockets.SocketError
+	 Get 
+--]]
+UnityGameFramework.Runtime.NetworkErrorEventArgs.SocketErrorCode = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.NetworkErrorEventArgs.ErrorMessage = nil
+--[[
+	@return [luaIde#UnityGameFramework.Runtime.NetworkErrorEventArgs]
+]]
+function UnityGameFramework.Runtime.NetworkErrorEventArgs:New() end
+--[[
+	@e GameFramework.Network.NetworkErrorEventArgs
+	@return [luaIde#UnityGameFramework.Runtime.NetworkErrorEventArgs]
+--]]
+function UnityGameFramework.Runtime.NetworkErrorEventArgs:Create(e) end
+function UnityGameFramework.Runtime.NetworkErrorEventArgs:Clear() end
+
+--@SuperType [luaIde#GameFramework.GameFrameworkEventArgs]
+GameFramework.WebRequest.WebRequestSuccessEventArgs = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+GameFramework.WebRequest.WebRequestSuccessEventArgs.SerialId = nil
+--[[
+	System.String
+	 Get 
+--]]
+GameFramework.WebRequest.WebRequestSuccessEventArgs.WebRequestUri = nil
+--[[
+	System.Object
+	 Get 
+--]]
+GameFramework.WebRequest.WebRequestSuccessEventArgs.UserData = nil
+--[[
+	@return [luaIde#GameFramework.WebRequest.WebRequestSuccessEventArgs]
+]]
+function GameFramework.WebRequest.WebRequestSuccessEventArgs:New() end
+--[[
+	@serialId System.Int32
+	@webRequestUri System.String
+	@webResponseBytes System.Byte{}
+	@userData System.Object
+	@return [luaIde#GameFramework.WebRequest.WebRequestSuccessEventArgs]
+--]]
+function GameFramework.WebRequest.WebRequestSuccessEventArgs:Create(serialId,webRequestUri,webResponseBytes,userData) end
+function GameFramework.WebRequest.WebRequestSuccessEventArgs:Clear() end
+function GameFramework.WebRequest.WebRequestSuccessEventArgs:GetWebResponseBytes() end
+
+--@SuperType [luaIde#GameFramework.GameFrameworkEventArgs]
+GameFramework.WebRequest.WebRequestFailureEventArgs = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+GameFramework.WebRequest.WebRequestFailureEventArgs.SerialId = nil
+--[[
+	System.String
+	 Get 
+--]]
+GameFramework.WebRequest.WebRequestFailureEventArgs.WebRequestUri = nil
+--[[
+	System.String
+	 Get 
+--]]
+GameFramework.WebRequest.WebRequestFailureEventArgs.ErrorMessage = nil
+--[[
+	System.Object
+	 Get 
+--]]
+GameFramework.WebRequest.WebRequestFailureEventArgs.UserData = nil
+--[[
+	@return [luaIde#GameFramework.WebRequest.WebRequestFailureEventArgs]
+]]
+function GameFramework.WebRequest.WebRequestFailureEventArgs:New() end
+--[[
+	@serialId System.Int32
+	@webRequestUri System.String
+	@errorMessage System.String
+	@userData System.Object
+	@return [luaIde#GameFramework.WebRequest.WebRequestFailureEventArgs]
+--]]
+function GameFramework.WebRequest.WebRequestFailureEventArgs:Create(serialId,webRequestUri,errorMessage,userData) end
+function GameFramework.WebRequest.WebRequestFailureEventArgs:Clear() end
+
+--@SuperType [luaIde#GameFramework.Event.GameEventArgs]
+UnityGameFramework.Runtime.WebRequestSuccessEventArgs = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.WebRequestSuccessEventArgs.EventId = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.WebRequestSuccessEventArgs.Id = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.WebRequestSuccessEventArgs.SerialId = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.WebRequestSuccessEventArgs.WebRequestUri = nil
+--[[
+	System.Object
+	 Get 
+--]]
+UnityGameFramework.Runtime.WebRequestSuccessEventArgs.UserData = nil
+--[[
+	@return [luaIde#UnityGameFramework.Runtime.WebRequestSuccessEventArgs]
+]]
+function UnityGameFramework.Runtime.WebRequestSuccessEventArgs:New() end
+function UnityGameFramework.Runtime.WebRequestSuccessEventArgs:GetWebResponseBytes() end
+--[[
+	@e GameFramework.WebRequest.WebRequestSuccessEventArgs
+	@return [luaIde#UnityGameFramework.Runtime.WebRequestSuccessEventArgs]
+--]]
+function UnityGameFramework.Runtime.WebRequestSuccessEventArgs:Create(e) end
+function UnityGameFramework.Runtime.WebRequestSuccessEventArgs:Clear() end
+
+--@SuperType [luaIde#GameFramework.Event.GameEventArgs]
+UnityGameFramework.Runtime.WebRequestFailureEventArgs = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.WebRequestFailureEventArgs.EventId = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.WebRequestFailureEventArgs.Id = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.WebRequestFailureEventArgs.SerialId = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.WebRequestFailureEventArgs.WebRequestUri = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.WebRequestFailureEventArgs.ErrorMessage = nil
+--[[
+	System.Object
+	 Get 
+--]]
+UnityGameFramework.Runtime.WebRequestFailureEventArgs.UserData = nil
+--[[
+	@return [luaIde#UnityGameFramework.Runtime.WebRequestFailureEventArgs]
+]]
+function UnityGameFramework.Runtime.WebRequestFailureEventArgs:New() end
+--[[
+	@e GameFramework.WebRequest.WebRequestFailureEventArgs
+	@return [luaIde#UnityGameFramework.Runtime.WebRequestFailureEventArgs]
+--]]
+function UnityGameFramework.Runtime.WebRequestFailureEventArgs:Create(e) end
+function UnityGameFramework.Runtime.WebRequestFailureEventArgs:Clear() end
+
+--@SuperType [luaIde#GameFramework.Event.GameEventArgs]
+UnityGameFramework.Runtime.ResourceUpdateStartEventArgs = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateStartEventArgs.EventId = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateStartEventArgs.Id = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateStartEventArgs.Name = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateStartEventArgs.DownloadPath = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateStartEventArgs.DownloadUri = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateStartEventArgs.CurrentLength = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateStartEventArgs.CompressedLength = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateStartEventArgs.RetryCount = nil
+--[[
+	@return [luaIde#UnityGameFramework.Runtime.ResourceUpdateStartEventArgs]
+]]
+function UnityGameFramework.Runtime.ResourceUpdateStartEventArgs:New() end
+--[[
+	@e GameFramework.Resource.ResourceUpdateStartEventArgs
+	@return [luaIde#UnityGameFramework.Runtime.ResourceUpdateStartEventArgs]
+--]]
+function UnityGameFramework.Runtime.ResourceUpdateStartEventArgs:Create(e) end
+function UnityGameFramework.Runtime.ResourceUpdateStartEventArgs:Clear() end
+
+--@SuperType [luaIde#GameFramework.Event.GameEventArgs]
+UnityGameFramework.Runtime.ResourceUpdateChangedEventArgs = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateChangedEventArgs.EventId = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateChangedEventArgs.Id = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateChangedEventArgs.Name = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateChangedEventArgs.DownloadPath = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateChangedEventArgs.DownloadUri = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateChangedEventArgs.CurrentLength = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateChangedEventArgs.CompressedLength = nil
+--[[
+	@return [luaIde#UnityGameFramework.Runtime.ResourceUpdateChangedEventArgs]
+]]
+function UnityGameFramework.Runtime.ResourceUpdateChangedEventArgs:New() end
+--[[
+	@e GameFramework.Resource.ResourceUpdateChangedEventArgs
+	@return [luaIde#UnityGameFramework.Runtime.ResourceUpdateChangedEventArgs]
+--]]
+function UnityGameFramework.Runtime.ResourceUpdateChangedEventArgs:Create(e) end
+function UnityGameFramework.Runtime.ResourceUpdateChangedEventArgs:Clear() end
+
+--@SuperType [luaIde#GameFramework.Event.GameEventArgs]
+UnityGameFramework.Runtime.ResourceUpdateSuccessEventArgs = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateSuccessEventArgs.EventId = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateSuccessEventArgs.Id = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateSuccessEventArgs.Name = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateSuccessEventArgs.DownloadPath = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateSuccessEventArgs.DownloadUri = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateSuccessEventArgs.Length = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateSuccessEventArgs.CompressedLength = nil
+--[[
+	@return [luaIde#UnityGameFramework.Runtime.ResourceUpdateSuccessEventArgs]
+]]
+function UnityGameFramework.Runtime.ResourceUpdateSuccessEventArgs:New() end
+--[[
+	@e GameFramework.Resource.ResourceUpdateSuccessEventArgs
+	@return [luaIde#UnityGameFramework.Runtime.ResourceUpdateSuccessEventArgs]
+--]]
+function UnityGameFramework.Runtime.ResourceUpdateSuccessEventArgs:Create(e) end
+function UnityGameFramework.Runtime.ResourceUpdateSuccessEventArgs:Clear() end
+
+--@SuperType [luaIde#GameFramework.Event.GameEventArgs]
+UnityGameFramework.Runtime.ResourceUpdateFailureEventArgs = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateFailureEventArgs.EventId = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateFailureEventArgs.Id = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateFailureEventArgs.Name = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateFailureEventArgs.DownloadUri = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateFailureEventArgs.RetryCount = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateFailureEventArgs.TotalRetryCount = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateFailureEventArgs.ErrorMessage = nil
+--[[
+	@return [luaIde#UnityGameFramework.Runtime.ResourceUpdateFailureEventArgs]
+]]
+function UnityGameFramework.Runtime.ResourceUpdateFailureEventArgs:New() end
+--[[
+	@e GameFramework.Resource.ResourceUpdateFailureEventArgs
+	@return [luaIde#UnityGameFramework.Runtime.ResourceUpdateFailureEventArgs]
+--]]
+function UnityGameFramework.Runtime.ResourceUpdateFailureEventArgs:Create(e) end
+function UnityGameFramework.Runtime.ResourceUpdateFailureEventArgs:Clear() end
+
+--@SuperType [luaIde#GameFramework.Event.GameEventArgs]
+UnityGameFramework.Runtime.ResourceUpdateAllCompleteEventArgs = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateAllCompleteEventArgs.EventId = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.ResourceUpdateAllCompleteEventArgs.Id = nil
+--[[
+	@return [luaIde#UnityGameFramework.Runtime.ResourceUpdateAllCompleteEventArgs]
+]]
+function UnityGameFramework.Runtime.ResourceUpdateAllCompleteEventArgs:New() end
+--[[
+	@e GameFramework.Resource.ResourceUpdateAllCompleteEventArgs
+	@return [luaIde#UnityGameFramework.Runtime.ResourceUpdateAllCompleteEventArgs]
+--]]
+function UnityGameFramework.Runtime.ResourceUpdateAllCompleteEventArgs:Create(e) end
+function UnityGameFramework.Runtime.ResourceUpdateAllCompleteEventArgs:Clear() end
+
+--@SuperType [luaIde#GameFramework.Event.GameEventArgs]
+UnityGameFramework.Runtime.LoadDictionarySuccessEventArgs = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.LoadDictionarySuccessEventArgs.EventId = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.LoadDictionarySuccessEventArgs.Id = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.LoadDictionarySuccessEventArgs.DictionaryAssetName = nil
+--[[
+	System.Single
+	 Get 
+--]]
+UnityGameFramework.Runtime.LoadDictionarySuccessEventArgs.Duration = nil
+--[[
+	System.Object
+	 Get 
+--]]
+UnityGameFramework.Runtime.LoadDictionarySuccessEventArgs.UserData = nil
+--[[
+	@return [luaIde#UnityGameFramework.Runtime.LoadDictionarySuccessEventArgs]
+]]
+function UnityGameFramework.Runtime.LoadDictionarySuccessEventArgs:New() end
+--[[
+	@e GameFramework.ReadDataSuccessEventArgs
+	@return [luaIde#UnityGameFramework.Runtime.LoadDictionarySuccessEventArgs]
+--]]
+function UnityGameFramework.Runtime.LoadDictionarySuccessEventArgs:Create(e) end
+function UnityGameFramework.Runtime.LoadDictionarySuccessEventArgs:Clear() end
+
+--@SuperType [luaIde#GameFramework.Event.GameEventArgs]
+UnityGameFramework.Runtime.LoadDictionaryFailureEventArgs = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.LoadDictionaryFailureEventArgs.EventId = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.LoadDictionaryFailureEventArgs.Id = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.LoadDictionaryFailureEventArgs.DictionaryAssetName = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.LoadDictionaryFailureEventArgs.ErrorMessage = nil
+--[[
+	System.Object
+	 Get 
+--]]
+UnityGameFramework.Runtime.LoadDictionaryFailureEventArgs.UserData = nil
+--[[
+	@return [luaIde#UnityGameFramework.Runtime.LoadDictionaryFailureEventArgs]
+]]
+function UnityGameFramework.Runtime.LoadDictionaryFailureEventArgs:New() end
+--[[
+	@e GameFramework.ReadDataFailureEventArgs
+	@return [luaIde#UnityGameFramework.Runtime.LoadDictionaryFailureEventArgs]
+--]]
+function UnityGameFramework.Runtime.LoadDictionaryFailureEventArgs:Create(e) end
+function UnityGameFramework.Runtime.LoadDictionaryFailureEventArgs:Clear() end
+
+--@SuperType [luaIde#GameFramework.Event.GameEventArgs]
+UnityGameFramework.Runtime.LoadSceneSuccessEventArgs = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.LoadSceneSuccessEventArgs.EventId = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.LoadSceneSuccessEventArgs.Id = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.LoadSceneSuccessEventArgs.SceneAssetName = nil
+--[[
+	System.Single
+	 Get 
+--]]
+UnityGameFramework.Runtime.LoadSceneSuccessEventArgs.Duration = nil
+--[[
+	System.Object
+	 Get 
+--]]
+UnityGameFramework.Runtime.LoadSceneSuccessEventArgs.UserData = nil
+--[[
+	@return [luaIde#UnityGameFramework.Runtime.LoadSceneSuccessEventArgs]
+]]
+function UnityGameFramework.Runtime.LoadSceneSuccessEventArgs:New() end
+--[[
+	@e GameFramework.Scene.LoadSceneSuccessEventArgs
+	@return [luaIde#UnityGameFramework.Runtime.LoadSceneSuccessEventArgs]
+--]]
+function UnityGameFramework.Runtime.LoadSceneSuccessEventArgs:Create(e) end
+function UnityGameFramework.Runtime.LoadSceneSuccessEventArgs:Clear() end
+
+--@SuperType [luaIde#GameFramework.Event.GameEventArgs]
+UnityGameFramework.Runtime.UnloadSceneSuccessEventArgs = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.UnloadSceneSuccessEventArgs.EventId = nil
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.UnloadSceneSuccessEventArgs.Id = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.UnloadSceneSuccessEventArgs.SceneAssetName = nil
+--[[
+	System.Object
+	 Get 
+--]]
+UnityGameFramework.Runtime.UnloadSceneSuccessEventArgs.UserData = nil
+--[[
+	@return [luaIde#UnityGameFramework.Runtime.UnloadSceneSuccessEventArgs]
+]]
+function UnityGameFramework.Runtime.UnloadSceneSuccessEventArgs:New() end
+--[[
+	@e GameFramework.Scene.UnloadSceneSuccessEventArgs
+	@return [luaIde#UnityGameFramework.Runtime.UnloadSceneSuccessEventArgs]
+--]]
+function UnityGameFramework.Runtime.UnloadSceneSuccessEventArgs:Create(e) end
+function UnityGameFramework.Runtime.UnloadSceneSuccessEventArgs:Clear() end
+
+Encryption = {}
+--[[
+	@bytes System.Byte{}
+	@code System.Byte{}
+	return System.Byte{}
+--]]
+function Encryption:GetQuickXorBytes(bytes,code) end
+--[[
+	@bytes System.Byte{}
+	@code System.Byte{}
+--]]
+function Encryption:GetQuickSelfXorBytes(bytes,code) end
+--[[
+	@bytes System.Byte{}
+	@code System.Byte{}
+	return System.Byte{}
+--]]
+function Encryption:GetXorBytes(bytes,code) end
+--[[
+	@bytes System.Byte{}
+	@code System.Byte{}
+--]]
+function Encryption:GetSelfXorBytes(bytes,code) end
+
+--UnityGameFramework.Runtime.ShutdownType  Enum
+UnityGameFramework.Runtime.ShutdownType = {}
+--[[
+
+	 Get 
+--]]
+UnityGameFramework.Runtime.ShutdownType.None = 0
+--[[
+
+	 Get 
+--]]
+UnityGameFramework.Runtime.ShutdownType.Restart = 1
+--[[
+
+	 Get 
+--]]
+UnityGameFramework.Runtime.ShutdownType.Quit = 2
+
+--@SuperType [luaIde#UnityEngine.MonoBehaviour]
+UnityGameFramework.Runtime.Entity = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+UnityGameFramework.Runtime.Entity.Id = nil
+--[[
+	System.String
+	 Get 
+--]]
+UnityGameFramework.Runtime.Entity.EntityAssetName = nil
+--[[
+	System.Object
+	 Get 
+--]]
+UnityGameFramework.Runtime.Entity.Handle = nil
+--[[
+	GameFramework.Entity.IEntityGroup
+	 Get 
+--]]
+UnityGameFramework.Runtime.Entity.EntityGroup = nil
+--[[
+	@RefType [luaIde#UnityGameFramework.Runtime.EntityLogic]
+	 Get 
+--]]
+UnityGameFramework.Runtime.Entity.Logic = nil
+--[[
+	@entityId System.Int32
+	@entityAssetName System.String
+	@entityGroup GameFramework.Entity.IEntityGroup
+	@isNewInstance System.Boolean
+	@userData System.Object
+--]]
+function UnityGameFramework.Runtime.Entity:OnInit(entityId,entityAssetName,entityGroup,isNewInstance,userData) end
+function UnityGameFramework.Runtime.Entity:OnRecycle() end
+--[[
+	@userData System.Object
+--]]
+function UnityGameFramework.Runtime.Entity:OnShow(userData) end
+--[[
+	@isShutdown System.Boolean
+	@userData System.Object
+--]]
+function UnityGameFramework.Runtime.Entity:OnHide(isShutdown,userData) end
+--[[
+	@childEntity GameFramework.Entity.IEntity
+	@userData System.Object
+--]]
+function UnityGameFramework.Runtime.Entity:OnAttached(childEntity,userData) end
+--[[
+	@childEntity GameFramework.Entity.IEntity
+	@userData System.Object
+--]]
+function UnityGameFramework.Runtime.Entity:OnDetached(childEntity,userData) end
+--[[
+	@parentEntity GameFramework.Entity.IEntity
+	@userData System.Object
+--]]
+function UnityGameFramework.Runtime.Entity:OnAttachTo(parentEntity,userData) end
+--[[
+	@parentEntity GameFramework.Entity.IEntity
+	@userData System.Object
+--]]
+function UnityGameFramework.Runtime.Entity:OnDetachFrom(parentEntity,userData) end
+--[[
+	@elapseSeconds System.Single
+	@realElapseSeconds System.Single
+--]]
+function UnityGameFramework.Runtime.Entity:OnUpdate(elapseSeconds,realElapseSeconds) end
+
+--@SuperType [luaIde#UnityEngine.MonoBehaviour]
+UnityGameFramework.Runtime.EntityLogic = {}
+--[[
+	@RefType [luaIde#UnityGameFramework.Runtime.Entity]
+	 Get 
+--]]
+UnityGameFramework.Runtime.EntityLogic.Entity = nil
+--[[
+	System.String
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.EntityLogic.Name = nil
+--[[
+	System.Boolean
+	 Get 
+--]]
+UnityGameFramework.Runtime.EntityLogic.Available = nil
+--[[
+	System.Boolean
+	 Get 	 Set 
+--]]
+UnityGameFramework.Runtime.EntityLogic.Visible = nil
+--[[
+	@RefType [luaIde#UnityEngine.Transform]
+	 Get 
+--]]
+UnityGameFramework.Runtime.EntityLogic.CachedTransform = nil
+
+--@SuperType [luaIde#Base]
+Manager = {}
+
+--@SuperType [luaIde#UnityEngine.MonoBehaviour]
+Base = {}
+
 --@SuperType [luaIde#UnityEngine.Behaviour]
 UnityEngine.AudioBehaviour = {}
 --[[
 	@return [luaIde#UnityEngine.AudioBehaviour]
 ]]
 function UnityEngine.AudioBehaviour:New() end
+
+--@SuperType [luaIde#UnityEngine.Events.UnityEventBase]
+UnityEvent_UnityEngine_EventSystems_BaseEventData = {}
+--[[
+	@return [luaIde#UnityEvent_UnityEngine_EventSystems_BaseEventData]
+]]
+function UnityEvent_UnityEngine_EventSystems_BaseEventData:New() end
+--[[
+	@call UnityEngine.Events.UnityAction`1{{UnityEngine.EventSystems.BaseEventData, UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null}}
+--]]
+function UnityEvent_UnityEngine_EventSystems_BaseEventData:AddListener(call) end
+--[[
+	@call UnityEngine.Events.UnityAction`1{{UnityEngine.EventSystems.BaseEventData, UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null}}
+--]]
+function UnityEvent_UnityEngine_EventSystems_BaseEventData:RemoveListener(call) end
+--[[
+	@arg0 UnityEngine.EventSystems.BaseEventData
+--]]
+function UnityEvent_UnityEngine_EventSystems_BaseEventData:Invoke(arg0) end
+
+--@SuperType [luaIde#System.Object]
+UnityEngine.Events.UnityEventBase = {}
+function UnityEngine.Events.UnityEventBase:GetPersistentEventCount() end
+--[[
+	@index System.Int32
+	return UnityEngine.Object
+--]]
+function UnityEngine.Events.UnityEventBase:GetPersistentTarget(index) end
+--[[
+	@index System.Int32
+	return System.String
+--]]
+function UnityEngine.Events.UnityEventBase:GetPersistentMethodName(index) end
+--[[
+	@index System.Int32
+	@state UnityEngine.Events.UnityEventCallState
+--]]
+function UnityEngine.Events.UnityEventBase:SetPersistentListenerState(index,state) end
+function UnityEngine.Events.UnityEventBase:RemoveAllListeners() end
+function UnityEngine.Events.UnityEventBase:ToString() end
+--[[
+	@obj System.Object
+	@functionName System.String
+	@argumentTypes System.Type{}
+	return System.Reflection.MethodInfo
+--]]
+function UnityEngine.Events.UnityEventBase:GetValidMethodInfo(obj,functionName,argumentTypes) end
+
+--@SuperType [luaIde#System.Object]
+UnityEngine.EventSystems.AbstractEventData = {}
+--[[
+	System.Boolean
+	 Get 
+--]]
+UnityEngine.EventSystems.AbstractEventData.used = nil
+function UnityEngine.EventSystems.AbstractEventData:Reset() end
+function UnityEngine.EventSystems.AbstractEventData:Use() end
+
+--@SuperType [luaIde#UnityEngine.MonoBehaviour]
+UnityGameFramework.Runtime.GameFrameworkComponent = {}
+
+--@SuperType [luaIde#GameFramework.BaseEventArgs]
+GameFramework.Event.GameEventArgs = {}
+
+--@SuperType [luaIde#GameFramework.GameFrameworkEventArgs]
+GameFramework.BaseEventArgs = {}
+--[[
+	System.Int32
+	 Get 
+--]]
+GameFramework.BaseEventArgs.Id = nil
+
+--@SuperType [luaIde#System.EventArgs]
+GameFramework.GameFrameworkEventArgs = {}
+function GameFramework.GameFrameworkEventArgs:Clear() end
+
+--@SuperType [luaIde#System.Object]
+System.EventArgs = {}
+--[[
+	@RefType [luaIde#System.EventArgs]
+	 Get 
+--]]
+System.EventArgs.Empty = nil
+--[[
+	@return [luaIde#System.EventArgs]
+]]
+function System.EventArgs:New() end
 
